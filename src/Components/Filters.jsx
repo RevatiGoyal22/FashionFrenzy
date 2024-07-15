@@ -49,8 +49,8 @@ const Filters = ({ brandsBar, handleFilter }) => {
                               //    checked.indexOf(value.brand) !== -1
                               // }
                               tabIndex={-1}
-                              disableRipple
-                              inputProps={{
+                              disableripple
+                              inputprops={{
                                  "aria-labelledby": labelId,
                               }}
                            />

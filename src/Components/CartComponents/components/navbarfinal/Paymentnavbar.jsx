@@ -14,17 +14,6 @@ function LinkTab(props) {
 const navigate=useNavigate();
 
 
-//   console.log("props",props);
-//  useEffect(()=>{
-//   console.log(props);
-//   if(props.selected===true)
-//   {
-//     navigate(props.href);
-//     return;
-//   }
-  
-//   },[])
-  
 
     return (      
       <Tab

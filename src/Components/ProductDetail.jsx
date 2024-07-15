@@ -10,10 +10,16 @@ const ProductDetail = () => {
   const { product } = location.state;
   const navigate = useNavigate();
   const { addToMoodboard } = useMoodboard(MoodboardContext);
-
+    const handleAddToMoodboard = (product) => {
+      const category = prompt(
+        "Enter the category (party,sport, wanderlust,sanskari,casual,formal)"
+      );
+      addToMoodboard(product, category);
+     
+    };
   return (
     <Container style={{ marginTop: "2rem" }}>
-      <Grid container spacing={4}> 
+      <Grid container spacing={4}>
         {/* Product Image */}
         <Grid item xs={12} md={6}>
           <CardMedia
@@ -26,7 +32,7 @@ const ProductDetail = () => {
 
         {/* Product Details */}
         <Grid item xs={12} md={6}>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" gutterBottom style={{fontSize:"20px" }}>
             {product.title}
           </Typography>
           <Typography variant="h5" color="textSecondary">
@@ -80,8 +86,8 @@ const ProductDetail = () => {
             variant="contained"
             color="secondary"
             onClick={() => {
-              addToMoodboard(product); // Add product to moodboard
-              navigate("/moodboard"); // Navigate to moodboard
+              handleAddToMoodboard(product); // Add product to moodboard
+               navigate("/moodboard"); // Navigate to moodboard
             }}
           >
             Add to Moodboard

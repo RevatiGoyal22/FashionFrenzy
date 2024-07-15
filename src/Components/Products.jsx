@@ -27,7 +27,11 @@
     const { addToMoodboard } = useMoodboard();
 
      const handleAddToMoodboard = (product) => {
-       addToMoodboard(product); 
+       const category = prompt(
+         "Enter the category (party,sport, wanderlust ,sanskari ,casual ,formal)"
+       );
+       addToMoodboard(product, category);
+       
      };
 
     useEffect(() => {
@@ -156,7 +160,11 @@
                 <div className="productContainer">
                     {filteredData.map((e, i) => {
                       return (
-                        <Card sx={{ maxWidth: 275 }} className="card">
+                        <Card
+                          key={i}
+                          sx={{ maxWidth: 275 }}
+                          className="card"
+                        >
                           <CardMedia
                             component="img"
                             // height="140"

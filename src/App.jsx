@@ -15,19 +15,21 @@ import { MoodboardProvider } from "./Components/CartComponents/contexts/Moodboar
 import Moodboard from "./Components/Moodboard";
 import { useEffect } from "react";
 import ScrollToTop from "./Components/ScrollToTop";
+import Reccomendations from "./Components/Reccomendations.jsx";
+import LipstickTryOn from "./Components/LipstickTryOn.jsx";
 
 function App() {
   const Location = useLocation();
   console.log(Location);
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   return (
     <div className="App">
       {/* <Navbar /> */}
       {Location.pathname === "/bag" ||
-      Location.pathname === "/address" ||
-      Location.pathname === "/payment" ? (
+        Location.pathname === "/address" ||
+        Location.pathname === "/payment" ? (
         <Navbarpayment />
       ) : (
         <Navbar />
@@ -49,6 +51,9 @@ function App() {
           path="/Beauty"
           element={<Products data={"beautyData"} />}
         ></Route>
+
+
+
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/login" element={<Login />}></Route>
 
@@ -81,7 +86,10 @@ function App() {
         ></Route>
         <Route path={"/product/:id"} element={<ProductDetail />} />
         <Route path={"/moodboard"} element={<Moodboard />} />
-        
+        <Route path={"/reccomendations"} element={<Reccomendations />} />
+        <Route path={"/virtualtryon"} element={<LipstickTryOn />} />
+
+
       </Routes>
 
       <Footer></Footer>
